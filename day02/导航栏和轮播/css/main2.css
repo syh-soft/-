@@ -1,0 +1,48 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    }
+
+#main {
+    width: 500px;
+    position: relative;
+    margin-left: auto;
+    margin-top: 20px;
+    margin-right: auto;
+	}
+
+#nav {
+    list-style: none;
+    line-height: 0;
+    height: 40px;
+    width: 510px;
+    font-size: 0;
+}
+
+
+#nav li {
+    display: inline;
+    float: left;
+}
+
+#nav a {
+    display: block;
+    font-size: 20px;
+    line-height: 30px;
+    width: 80px;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: black;
+}
+
+#navigation {
+    position: absolute;
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    top: 0px;
+    z-index: -1;
+    background-color: blue;
+}

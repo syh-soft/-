@@ -1,0 +1,72 @@
+#box1{
+	width: 350px;
+	height: 200px;
+	background-image: url(../img/1.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+#box2{
+	width: 350px;
+	height: 200px;
+	background-image: url(../img/2.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	display: none;
+}
+
+#box3{
+	width: 350px;
+	height: 200px;
+	background-image: url(../img/3.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+	display: none;
+}
+
+.square{
+	position: absolute;
+	top: 180px;
+	left: 300px;
+}
+
+.square span{
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background-color: #ffffff;
+            line-height: 16px;
+            text-align: center;
+            cursor: pointer;
+			color: black;
+        }
+
+#one{
+	color: red;
+}
+
+#btn1{
+	position: absolute;
+	top: 100px;
+	left: 316px;
+	cursor:pointer;
+	opacity:0.1;
+}
+
+#btn2{
+	position: absolute;
+	top: 100px;
+	cursor:pointer;
+	opacity:0.1;
+}
+
+#btn1:hover{
+	opacity:1
+}
+
+#btn2:hover{
+	opacity:1
+}
+

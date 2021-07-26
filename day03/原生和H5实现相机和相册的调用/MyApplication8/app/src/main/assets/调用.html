@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+<div id="top">
+	<button  onclick="window.open.showCamera()">拍照</button>
+	<button  onclick="window.open.showGallary()">选择照片</button>
+</div>
+<div >
+	<img src="背景.jpg"  id="imgid">
+</div>
+
+</body>
+<style type="text/css">
+		#top{
+		    width:300px;
+			display: flex;
+		}
+        button {
+			margin-left: 10px;
+            width: 100px;
+            height: 25px;
+            background-color: yellowgreen;
+			cursor: pointer;
+        }
+		#imgid {
+			margin-top: 10px;
+			height: 500px;
+			width: 400px;
+		}
+    </style>
+<script>
+		function change(imagepath) {
+			var img = document.getElementById("imgid");
+			img.src = imagepath;
+			return imagepath;
+		}
+	</script>
+</html>

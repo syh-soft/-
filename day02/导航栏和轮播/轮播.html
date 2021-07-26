@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+	</head>
+	<body>
+		<div id="box1" ></div>
+		<div id="box2"></div>
+		<div id="box3"></div>
+		<div class="square">
+			    <span id="one">1</span>
+			    <span id="two">2</span>
+			    <span id="three">3</span>
+		</div>
+		<button type="button" id="btn1">前进</button>
+		<button type="button" id="btn2">后�</button>
+		<script>
+			var time = 1;
+			var btn = document.getElementById('btn');
+			var one = document.getElementById('one');
+			var two = document.getElementById('two');
+			var three = document.getElementById('three');
+			function change(){
+				if(time%3 == 0){
+					document.getElementById('one').style.color = 'red'
+					document.getElementById('two').style.color = 'black'
+					document.getElementById('three').style.color = 'black'
+					document.getElementById('box1').style.display = 'block'
+					document.getElementById('box2').style.display = 'none'
+					document.getElementById('box3').style.display = 'none'
+				}		
+				else if(time%3 == 1){
+					document.getElementById('two').style.color = 'red'
+					document.getElementById('one').style.color = 'black'
+					document.getElementById('three').style.color = 'black'
+					document.getElementById('box2').style.display = 'block'
+					document.getElementById('box1').style.display = 'none'
+					document.getElementById('box3').style.display = 'none'
+				}	
+				else if(time%3 == 2){
+					document.getElementById('three').style.color = 'red'
+					document.getElementById('one').style.color = 'black'
+					document.getElementById('two').style.color = 'black'
+					document.getElementById('box3').style.display = 'block'
+					document.getElementById('box2').style.display = 'none'
+					document.getElementById('box1').style.display = 'none'
+				}
+				time = time +1;		
+			};
+			var b = setInterval(change,2000);
+			one.onclick = function(){
+				time = 0;
+				change();
+			}
+			two.onclick = function(){
+				time = 1;
+				change();
+			}
+			three.onclick = function(){
+				time = 2;
+				change();
+			}
+		
+			btn1.onclick = function(){
+				change();
+			}
+			
+			btn2.onclick = function(){
+				time = time +1;
+				change();
+			}
+		</script>
+	</body>
+
+</html>

@@ -1,0 +1,24 @@
+#工程访问配置
+server:
+  port: 8082
+  servlet:
+    context-path: /demo
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/try?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: syh110920323
+# mybatis
+mybatis-plus:
+  # 实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.example.day12.entity
+#接口文档配置
+#swagger:
+#  basic:
+#    # 是否启用swagger接口文档登录功能，登录后才可以访问
+#    enable: true
+#    # 访问swagger接口文档的登录用户名
+#    username: admin
+#    # 访问swagger接口文档的登录密码
+#    password: admin

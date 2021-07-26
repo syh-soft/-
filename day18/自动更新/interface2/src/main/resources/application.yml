@@ -1,0 +1,24 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /demo
+
+spring:
+  servlet:
+    multipart:
+      # 单个文件大小
+      max-file-size:  100MB
+      # 设置总上传的文件大小
+      max-request-size:  500MB
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/apk?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: vkgchkgcxjfchg
+
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  typeAliasesPackage: com.haley.demo.entity
+
+

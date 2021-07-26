@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/main2.css"/>
+	</head>
+	<body>
+		<div id="main">
+		    <div id="navigation"></div>
+		    <ul id="nav">
+		        <li><a href="#">导航01</a></li>
+		        <li><a href="#">导航02</a></li>
+		        <li><a href="#">导航03</a></li>
+		        <li><a href="#">导航04</a></li>
+		        <li><a href="#">导航05</a></li>
+		    </ul>
+		</div>
+		<script>
+		    add(moveOne);
+		    function add(func) {
+		        var oldonload = window.onload;
+		        if (typeof window.onload != "function") {
+		            window.onload = func;
+		        }
+		        else {
+		            window.onload = function () {
+		                oldonload();
+		                func();
+		            }
+		        }
+		    }
+		    function moveOne() {
+		        var navList = document.getElementById("nav");
+		        var aList = navList.getElementsByTagName("a");
+		        var elem = document.getElementById("navigation");
+		        var main = document.getElementById("main");
+		        elem.style.left = "0px";
+		        elem.style.distances = 0;
+		        aList[0].onmouseover = function () {
+		            move("navigation", 0, 10);
+		        }
+		        aList[1].onmouseover = function () {
+		            move("navigation", 100, 10);
+		        }
+		        aList[2].onmouseover = function () {
+		            move("navigation", 200, 10);
+		        }
+		        aList[3].onmouseover = function () {
+		            move("navigation", 300, 10);
+		        }
+		        aList[4].onmouseover = function () {
+		            move("navigation", 400, 10);
+		        }
+		        /*添加鼠标移出事件*/
+		        main.onmouseout = function (ev) {
+		            move("navigation", elem.style.distances, 10)
+		        }
+		    }
+		    /*移动函数*/
+		    function move(id, left, time) {
+		        var elem = document.getElementById(id);
+		        if (elem.style.movement) {
+		            clearTimeout(elem.style.movement);
+		        }
+		        var n_left = parseInt(window.getComputedStyle(elem, null)["left"]);
+		        if (left == n_left) {
+		            return true;
+		        }
+		        if (n_left > left) {
+		            var sade = Math.ceil((n_left - left) / 10);
+		            n_left = n_left - sade;
+		        }
+		        if (n_left < left) {
+		            var sade = Math.ceil((left - n_left) / 10);
+		            n_left = n_left + sade;
+		        }
+		        elem.style.left = n_left + "px";
+		        elem.style.movement = setTimeout("move('" + id + "'," + left + "," + time + ")", time);
+		    }
+		
+		
+		</script>
+	</body>
+</html>
